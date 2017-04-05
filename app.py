@@ -43,10 +43,6 @@ r.set_loop_type("tornado")
 
 
 class MainHandler(tornado.web.RequestHandler): #Class that renders login page
-    #@tornado.gen.coroutine
-    #def get(self):
-    #    detail_template = template_env.get_template("detail_old.html") #Loads tenplate
-    #    self.write(detail_template.render())
     
     @tornado.gen.coroutine
     def get(self):

@@ -45,7 +45,7 @@ function drawChart() {
         curveType: 'function',
         legend: { position: 'bottom' },
         hAxis: {
-          ticks: [new Date(2017, 3, 3, 20, 00), new Date(2017, 3, 3, 23, 00)]
+          ticks: [new Date(2017, 3, 3, 20, 00, 00), new Date(2017, 3, 5, 23, 00, 00)]
         }
     };
 
