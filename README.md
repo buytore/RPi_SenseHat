@@ -1,7 +1,31 @@
-# thinktor
+Many thanks to thinktor for putting this together initially
+(https://github.com/narenaryan/thinktor)
+
+Porting to use with Raspberry Pi and SenseHat module to 
+store humidity, pressure and temperature in RethinkDB, and 
+upon changes update Google Charts on we page.
+
 A tornado and RethinkDB real-time Data Push engine
 
-This project uses Python Tornado web browser and RethinkDB to notify superheroes real time.
+This project uses Python Tornado web browser and RethinkDB to notify Google Charts of updates
+in real time and the Raspberry Pi read the SenseHat.
+
+I installed miniconda using these instruction onto Raspberry Pi
+https://www.continuum.io/blog/developer/anaconda-raspberry-pi
+
+Once installed created an Conda environment
+~~~
+ > conda create -n py27RDB python=2.7
+ > source activate py27RDB
+ (py27RDB)> pip install -r requirements.txt
+ python app.py
+~~~
+
+
+
+Here's the original instructions as well.
+
+
 
 just install requirements
 
