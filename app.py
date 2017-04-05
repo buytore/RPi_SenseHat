@@ -13,7 +13,7 @@ import rethinkdb as r #For db stuff
 
 from rethinkdb.errors import RqlRuntimeError, RqlDriverError
 
-from conf import * #Fetching db and table details here
+from conf_old import * #Fetching db and table details here
 
 
 #Load the template environment
@@ -43,22 +43,20 @@ r.set_loop_type("tornado")
 
 
 class MainHandler(tornado.web.RequestHandler): #Class that renders login page
-    @tornado.gen.coroutine
-    def get(self):
-        detail_template = template_env.get_template("detail.html") #Loads tenplate
-        self.write(detail_template.render())
+    #@tornado.gen.coroutine
+    #def get(self):
+    #    detail_template = template_env.get_template("detail_old.html") #Loads tenplate
+    #    self.write(detail_template.render())
     
     @tornado.gen.coroutine
-    def post(self):
+    def get(self):
         home_template = template_env.get_template("home.html")
-        email = self.get_argument("email")
-        name = self.get_argument("nickname")
         connection = r.connect(RDB_HOST, RDB_PORT, PROJECT_DB)
         #Thread the connection
         threaded_conn = yield connection
-        result = r.table(PROJECT_TABLE).insert({ "name": name , "email" : email}, conflict="error").run(threaded_conn)
+        result = r.table(PROJECT_TABLE).run(threaded_conn)
         print 'log: %s inserted successfully'%result
-        self.write(home_template.render({"name":name}))
+        self.write(home_template.render({"name":result}))
 
 
 #Sends the new user joined alerts to all subscribers who subscribed
