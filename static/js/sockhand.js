@@ -18,7 +18,9 @@ function drawChart() {
     var data3 = new google.visualization.DataTable()
         data3.addColumn('date', 'Date');
         data3.addColumn('number', 'Temp');
-        data3.addRow([new Date(2017, 3, 3, 19, 01, 23), 22]);
+        data3.addColumn('number', 'Pres');
+        data3.addColumn('number', 'Humd');
+        data3.addRow([new Date(2017, 3, 3, 19, 01, 23), 22, 55, 30]);
 
     var options0 = {
         width: 200, height: 240,

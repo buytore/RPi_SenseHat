@@ -50,8 +50,10 @@ class MainHandler(tornado.web.RequestHandler): #Class that renders login page
         connection = r.connect(RDB_HOST, RDB_PORT, PROJECT_DB)
         #Thread the connection
         threaded_conn = yield connection
-        result = r.table(PROJECT_TABLE).run(threaded_conn)
-        print 'log: %s inserted successfully'%result
+        #result = r.table(PROJECT_TABLE).order_by(r.desc('date')).limit(200).run(threaded_conn)
+        result = r.table(PROJECT_TABLE).order_by(r.desc('date')).limit(200).run(connection)
+        jsonResult = list(result)
+        print 'log: %s inserted successfully'%jsonResult
         self.write(home_template.render({"name":result}))
 
 

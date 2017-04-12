@@ -23,7 +23,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 2.7.13 (~/anaconda/envs/py27RDThink/bin/python2.7)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 2.7.13 (~/miniconda2/envs/py27RethinkDB/bin/python2.7)" project-jdk-type="Python SDK" />
   <component name="VagrantProjectSettings">
     <option name="instanceFolder" value="" />
     <option name="provider" value="" />
